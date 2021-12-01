@@ -5,9 +5,9 @@ from .models import Book, Author, Address, Country
 
 class BookAdmin(admin.ModelAdmin): #configure adminstration fields
     
-    prepopulated_fields = {"slug":("title",)}
-    list_filter = ("author", "rating",)
-    list_display = ("title", "author")
+    prepopulated_fields = {"slug":("title",)} # this filed to fullfiled the slug field automaticly
+    list_filter = ("author", "rating",) # this field to display filters in the admin panel
+    list_display = ("title", "author") # this filed is how to display the columns in the admin panel
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ("first_name","last_name", "address")
