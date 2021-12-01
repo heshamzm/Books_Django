@@ -10,9 +10,9 @@ class Country(models.Model):
     code = models.CharField(max_length=2)
 
     class Meta:
-        verbose_name_plural = "Countries"
+        verbose_name_plural = "Countries" # here you can change the name of the showing table in the admin
 
-    def __str__(self):
+    def __str__(self): # this function to show the string name of each model.
         return f"{self.name}, {self.code}"
 
 class Address(models.Model):
@@ -49,7 +49,7 @@ class Book(models.Model):
     slug = models.SlugField(default="", blank=True, db_index=True)
     published_countries = models.ManyToManyField(Country) #many to many relationship
 
-    # def save(self, *args, **kwargs): >> this function ovvride the name of the slug to be the title
+    # def save(self, *args, **kwargs):           # this function overide the name of the slug to be the title
     #     self.slug = slugify(self.title)
     #     super(Book, self).save(*args, **kwargs)
 
